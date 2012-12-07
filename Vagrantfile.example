@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant::Config.run do |config|
+  config.vm.define :centos do |centos_config|
+    centos_config.vm.box = "CentOS-6.3"
+    centos_config.vm.box_url = "https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box"
+  end
+
+  config.vm.define :ubuntu do |ubuntu_config|
+    ubuntu_config.vm.box = "ubuntu-server-12.04"
+    ubuntu_config.vm.box_url = "https://dl.dropbox.com/u/1543052/Boxes/UbuntuServer12.04amd64.box"
+  end
+  
+  config.vm.define :debian do |debian_config|
+    debian_config.vm.box = "debian-6-2"
+    debian_config.vm.box_url = "http://andrew.mcnaughty.com/downloads/squeeze64_puppet27.box"
+  end
+
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.module_path = "puppet/modules"
+    puppet.manifest_file  = "base.pp"
+  end
+end
