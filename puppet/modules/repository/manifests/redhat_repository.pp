@@ -11,7 +11,7 @@ class redhat_repository {
   }
 
   exec { "epel.repo":
-    command => 'rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-7.noarch.rpm',
+    command => 'rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm',
     path    => ['/bin', '/usr/bin'],
     unless  => 'rpm -qa | grep epel',
   }
