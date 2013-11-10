@@ -9,7 +9,7 @@ Vagrant::Config.run do |config|
 
   config.vm.define :ubuntu do |ubuntu_config|
     ubuntu_config.vm.box = "ubuntu-server-12.04"
-    ubuntu_config.vm.box_url = "https://dl.dropbox.com/u/1543052/Boxes/UbuntuServer12.04amd64.box"
+    ubuntu_config.vm.box_url = "http://files.vagrantup.com/precise64.box"
   end
   
   config.vm.define :debian do |debian_config|
